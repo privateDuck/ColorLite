@@ -12,11 +12,16 @@ A simple .NET library for working with common color spaces
 ### Conversion Between Color Spaces
 * All working spaces implement the IColorSpace interface
 * The interface contains methods for converting one ColorSpace to another
-
 ```c#
 // Example
 LinearRGBColor linrgb = new LinearRGBColor(0.2,0,0.4);
 XYZColor xyz = linrgb.To_XYZ();
+```
+* You can also chain conversion methods
+```c#
+LinearRGBColor linrgb = new LinearRGBColor(0.2,0,0.4);
+XYZColor xyz = linrgb.To_XYZ();
+sRGBColor srgb = linrgb.To_XYZ().To_sRGB();
 ```
 
 ### CCT (Correlated Colour Temperature) Calculations
