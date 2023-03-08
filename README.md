@@ -4,7 +4,7 @@ A simple .NET library for working with common color spaces
 # Documentation
 ### Working Color Spaces
 * ColorLite offers 4 of the most commonly used Color Spaces
-  * [CIE XYZ (1931)](https://www.google.com](https://en.wikipedia.org/wiki/CIE_1931_color_space#Tristimulus_values))
+  * [CIE XYZ (1931)](https://en.wikipedia.org/wiki/CIE_1931_color_space#Meaning_of_X,_Y_and_Z)
   * [CIE xyY](https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space)
   * Linear RGB
   * [sRGB](https://en.wikipedia.org/wiki/SRGB#sRGB_definition)
