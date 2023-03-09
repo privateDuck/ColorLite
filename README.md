@@ -27,35 +27,14 @@ sRGBColor srgb = linrgb.To_XYZ().To_sRGB();
 
 ### CCT (Correlated Colour Temperature) Calculations
 * ColorLite offers the **CCTConverter** static class for working with CCTs
-* This mainly offers 4 functionalities
-  * Analytically computing the chromaticity (xyY) of a given temperature (in Kelvins)
-     ```c#
-     // Integrates the plankian radiance spectrum to compute the chromaticity
-     double temp = 20000.0;
-     xyYColor chromaticity1 = CCTConverter.GetChromaticityOfTemperature_Analytical(temp);
-     // Choosing a different precision
-     // false -> low precision (default)
-     // true -> high precision
-     xyYColor chromaticity2 = CCTConverter.GetChromaticityOfTemperature_Analytical(temp, true);
-     ```
-  * Approximating the chromaticity (xyY excluding Y) of a given temperature (in Kelvins)
-    ```c#
-     // Approximates the chromaticity
-     double temp = 20000.0;
-     xyYColor chromaticity1 = CCTConverter.GetChromaticityOfTemperature_Approximate(temp);
-    ```
-  * Approximating the CCT of a given chromaticity
-    ```c#
-     // Approximates the CCT of a given chromaticity (luminance ignored)
-     double temperature = CCTConverter.GetCCTofChromaticity(new xyYColor(0.5,0.2,0.0));
-    ```
-  * Converting the XYZ color of light with a given wavelength (in nano meters)
-    ```c#
-     // wavelength must be between 360nm and 830nm
-     double wavelength = 680;
-     XYZColor xyz = CCTConverter.WaveLengthToXYZ(wavelength);
-    ```
-## CIE Color Matching Tables
+* This offers 5 functionalities
+  * [Analytically computing the chromaticity of a given temperature using the plank's law](https://github.com/privateDuck/ColorLite/blob/main/Docs/chromaticity_an_pl.md)
+  * [Analytically computing the chromaticity of a given temperature using a custom spectral radiance function](https://github.com/privateDuck/ColorLite/blob/main/Docs/chromaticity_an_custom.md)
+  * [Approximating the chromaticity of a given temperature using the plank's law](https://github.com/privateDuck/ColorLite/blob/main/Docs/cct_approx_xyz.md)
+  * [Approximating the CCT of a given chromaticity](https://github.com/privateDuck/ColorLite/blob/main/Docs/cct_approx_xyz.md)
+  * [Calculating the XYZ color of light with a given wavelength](https://github.com/privateDuck/ColorLite/blob/main/Docs/cct_approx_xyz.md)
+  
+### CIE Color Matching Tables
 * ColorLite does allow you to use both the 5nm and the 1nm CIE Color Matching Tables
 * Use the provided **CIETables** static class to use these look-up tables
 * Although the static method **CCTConverter.WaveLengthToXYZ(double wavelength);** does more or less the same thing as the static methods contained in this class
