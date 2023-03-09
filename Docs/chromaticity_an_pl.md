@@ -5,5 +5,6 @@
   xyYColor chromaticity1 = CCTConverter.GetChromaticityOfTemperature_Analytical(temp);
   // Choosing a different precision
   // false -> low precision (default) | true -> high precision
-  xyYColor chromaticity2 = CCTConverter.GetChromaticityOfTemperature_Analytical(temp, true);
+  bool precision = true;
+  xyYColor chromaticity2 = CCTConverter.GetChromaticityOfTemperature_Analytical(temp, precision);
   ```
