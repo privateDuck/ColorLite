@@ -8,6 +8,7 @@ A simple .NET library for working with common color spaces
   * [CIE xyY](https://en.wikipedia.org/wiki/CIE_1931_color_space#CIE_xy_chromaticity_diagram_and_the_CIE_xyY_color_space)
   * Linear RGB
   * [sRGB](https://en.wikipedia.org/wiki/SRGB#sRGB_definition)
+* **Illuminant D65** is used as the white point
 
 ### Conversion Between Color Spaces
 * All working spaces implement the IColorSpace interface
